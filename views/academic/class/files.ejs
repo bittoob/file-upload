@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Uploaded Files</h2>
+<p>Class: <%= class %></p>
+<p>Subject: <%= subject %></p>
+<p>Topic: <%= topic %></p>
+<ul>
+  <% files.forEach(function(file) { %>
+    <li>
+      <a href="<%= `/uploads/${class}/${subject}/${topic}/${file}` %>"><%= file %></a>
+    </li>
+  <% }); %>
+</ul>
+</body>
+</html>

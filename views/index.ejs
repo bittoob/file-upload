@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>File Upload</title>
+  <!-- Include Bootstrap CSS (You need to include Bootstrap CSS separately) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS styles here */
+    .container {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">The Vidyalam</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="#">FAQ</a>
+
+          <a class="nav-link" href="#">Contact</a>
+
+
+        </div>
+      </div>
+      <div class="ml-auto"> <!-- Align content to the right -->
+        <a class="btn btn-primary" href="/register" target="_blank">Register</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container text-center">
+
+    <h1>Bringing Excellence To Students
+      Empowering and inspiring all students to excel as life long learners
+    </h1>
+    <h1>Welcome to Our Platform</h1>
+    <p>Choose your section below:</p>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Academic Section</h5>
+            <p class="card-text">Explore our academic resources.</p>
+            <a href="/academic" class="btn btn-primary">Go to Academic Section</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Technical Section</h5>
+            <p class="card-text">Discover technical topics and resources.</p>
+            <a href="/technical" class="btn btn-primary">Go to Technical Section</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic Upload Section -->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <label for="classSelect">Select Class:</label>
+      <select name="class" id="classSelect" onchange="updateSubjects()">
+        <option value="" disabled selected>Select Class</option>
+        <option value="class1">Class 1</option>
+        <option value="class2">Class 2</option>
+        <!-- Add options for other classes -->
+      </select>
+
+      <label for="subjectSelect">Select Subject:</label>
+      <select name="subject" id="subjectSelect" onchange="updateTopics()" disabled>
+        <option value="" disabled selected>Select Subject</option>
+        <!-- Subjects will be populated dynamically based on the selected class -->
+      </select>
+
+      <label for="topicSelect">Select Topic:</label>
+      <select name="topic" id="topicSelect" disabled>
+        <option value="" disabled selected>Select Topic</option>
+        <!-- Topics will be populated dynamically based on the selected subject -->
+      </select>
+
+      <label for="file-input" class="custom-file-upload">
+        <i class="fas fa-cloud-upload-alt"></i> Choose a file
+      </label>
+      <input type="file" id="file-input" name="file" class="input-file" />
+      <button type="submit" class="btn btn-success mt-2">Upload</button>
+    </form>
+
+  </div>
+
+  <section id="feature" class="container mt-5">
+    <h2>Features</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="feature1-image.jpg" class="card-img-top" alt="Feature 1">
+          <div class="card-body">
+            <h5 class="card-title">Feature 1</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="feature2-image.jpg" class="card-img-top" alt="Feature 2">
+          <div class="card-body">
+            <h5 class="card-title">Feature 2</h5>
+            <p class="card-text">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="feature3-image.jpg" class="card-img-top" alt="Feature 3">
+          <div class="card-body">
+            <h5 class="card-title">Feature 3</h5>
+            <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="feature3-image.jpg" class="card-img-top" alt="Feature 3">
+          <div class="card-body">
+            <h5 class="card-title">Feature 3</h5>
+            <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="feature3-image.jpg" class="card-img-top" alt="Feature 3">
+          <div class="card-body">
+            <h5 class="card-title">Feature 3</h5>
+            <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="feature3-image.jpg" class="card-img-top" alt="Feature 3">
+          <div class="card-body">
+            <h5 class="card-title">Feature 3</h5>
+            <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add your feature content here -->
+  </section>
+  <!-- Pricing Section -->
+  <section id="pricing" class="container mt-5">
+    <h2>Pricing</h2>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="feature3-image.jpg" class="card-img-top" alt="Feature 3">
+        <div class="card-body">
+          <h5 class="card-title">Feature 3</h5>
+          <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Add your pricing content here -->
+  </section>
+  <!-- FAQ Section -->
+
+  <!-- FAQ Section -->
+  <section id="faq" class="container mt-5">
+    <h2>FAQ</h2>
+    <div class="accordion" id="faqAccordion">
+      <!-- FAQ Item 1 -->
+      <div class="card">
+        <div class="card-header" id="faqHeading1">
+          <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faqCollapse1"
+              aria-expanded="true" aria-controls="faqCollapse1">
+              Question 1: What is The Vidyalam?
+            </button>
+          </h2>
+        </div>
+        <div id="faqCollapse1" class="collapse show" aria-labelledby="faqHeading1" data-parent="#faqAccordion">
+          <div class="card-body">
+            The Vidyalam is an online learning platform that provides educational resources and tools to help students
+            excel in their studies.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="card">
+        <div class="card-header" id="faqHeading2">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faqCollapse2"
+              aria-expanded="false" aria-controls="faqCollapse2">
+              Question 2: How can I sign up for The Vidyalam?
+            </button>
+          </h2>
+        </div>
+        <div id="faqCollapse2" class="collapse" aria-labelledby="faqHeading2" data-parent="#faqAccordion">
+          <div class="card-body">
+            You can sign up for The Vidyalam by clicking on the "Register" button in the navigation bar and following
+            the registration process.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="card">
+        <div class="card-header" id="faqHeading3">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faqCollapse3"
+              aria-expanded="false" aria-controls="faqCollapse3">
+              Question 3: Are there any fees for using The Vidyalam?
+            </button>
+          </h2>
+        </div>
+        <div id="faqCollapse3" class="collapse" aria-labelledby="faqHeading3" data-parent="#faqAccordion">
+          <div class="card-body">
+            The Vidyalam offers both free and paid plans. You can choose the plan that suits your needs.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 (Add more FAQ items as needed) -->
+      <div class="card">
+        <div class="card-header" id="faqHeading4">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faqCollapse4"
+              aria-expanded="false" aria-controls="faqCollapse4">
+              Question 4: How can I reset my password?
+            </button>
+          </h2>
+        </div>
+        <div id="faqCollapse4" class="collapse" aria-labelledby="faqHeading4" data-parent="#faqAccordion">
+          <div class="card-body">
+            You can reset your password by visiting the "Forgot Password" page and following the instructions.
+          </div>
+        </div>
+      </div>
+  </section>
+
+ <!-- Contact Section -->
+<section id="contact" class="container mt-5">
+  <h2>Contact Us</h2>
+  <button class="btn btn-primary" data-toggle="modal" data-target="#contactModal">Contact Us</button>
+</section>
+
+<!-- Contact Us Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Your Name">
+          </div>
+          <div class="form-group">
+            <label for="contactNumber">Contact Number</label>
+            <input type="tel" class="form-control" id="contactNumber" placeholder="Your Contact Number">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Your Email">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" rows="4" placeholder="Your Message"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer Section -->
+<footer class="bg-dark text-white mt-5">
+  <div class="container">
+    <div class="row">
+      <!-- Quick Links -->
+      <div class="col-md-4">
+        <h4>Quick Links</h4>
+        <ul class="list-unstyled">
+          <li><a href="#feature" class="text-white">Features</a></li>
+          <li><a href="#price" class="text-white">Pricing</a></li>
+          <li><a href="#faq" class="text-white">FAQ</a></li>
+          <li><a href="#contact" class="text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Details -->
+      <div class="col-md-4">
+        <h4>Contact Details</h4>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-map-marker"></i> 123 Main St, City, Country</li>
+          <li><i class="fas fa-phone"></i> +1-123-456-7890</li>
+          <li><i class="fas fa-envelope"></i> info@example.com</li>
+        </ul>
+      </div>
+
+      <!-- Social Links -->
+      <div class="col-md-4">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#" ><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Include Bootstrap JS (You need to include Bootstrap JS separately) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Simulated data for subjects and topics (replace with your actual data)
+    const classSubjects = {
+      class1: [
+        { id: 'math', name: 'Mathematics' },
+        { id: 'science', name: 'Science' },
+        // Add more subjects as needed for Class1
+      ],
+      class2: [
+        { id: 'history', name: 'History' },
+        { id: 'english', name: 'English' },
+        // Add more subjects as needed for Class2
+      ],
+    };
+
+    const subjectTopics = {
+      math: ['Algebra', 'Trigonometry'],
+      science: ['Biology', 'Physics'],
+      history: ['Ancient History', 'Modern History'],
+      english: ['Grammar', 'Literature'],
+      // Add more subjects and topics as needed
+    };
+
+    function updateSubjects() {
+      const classSelect = document.getElementById('classSelect');
+      const subjectSelect = document.getElementById('subjectSelect');
+      const topicSelect = document.getElementById('topicSelect');
+
+      const selectedClass = classSelect.value;
+      const subjects = classSubjects[selectedClass] || [];
+
+      // Clear existing options and enable the subject dropdown
+      subjectSelect.innerHTML = '<option value="" disabled selected>Select Subject</option>';
+      topicSelect.innerHTML = '<option value="" disabled selected>Select Topic</option>';
+      subjectSelect.disabled = false;
+      topicSelect.disabled = true;
+
+      subjects.forEach(subject => {
+        const option = document.createElement('option');
+        option.value = subject.id;
+        option.text = subject.name;
+        subjectSelect.appendChild(option);
+      });
+    }
+
+    function updateTopics() {
+      const subjectSelect = document.getElementById('subjectSelect');
+      const topicSelect = document.getElementById('topicSelect');
+
+      const selectedSubject = subjectSelect.value;
+      const topics = subjectTopics[selectedSubject] || [];
+
+      // Clear existing options and enable the topic dropdown
+      topicSelect.innerHTML = '<option value="" disabled selected>Select Topic</option>';
+      topicSelect.disabled = false;
+
+      topics.forEach(topic => {
+        const option = document.createElement('option');
+        option.value = topic;
+        option.text = topic;
+        topicSelect.appendChild(option);
+      });
+    }
+  </script>
+
+</body>
+
+</html>
